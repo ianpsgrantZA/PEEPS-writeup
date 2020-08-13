@@ -1,0 +1,103 @@
+\include{preamble/Preamble} 
+
+
+\begin{document}
+ 
+% Coverpage
+\thispagestyle{empty}
+{\Huge \begin{center}
+
+% Title
+Population of Environment Evaluation and Prediction System
+\hrule 
+% Modify the line below to insert your subtitle.
+{\Large An investigation into crowd sourced population tracking.}
+\end{center}}
+
+\vskip 5mm
+\begin{center}
+\includegraphics[scale = 0.3]{uctLogo.png}
+\end{center}
+
+% Name
+\vskip 5mm
+\begin{center}
+Presented by:\\
+Ian Grant		
+\end{center}
+
+% Supervisor
+\vskip 10mm
+\begin{center}
+Prepared for:\\
+Dr. S. Winberg\\ 		
+Dept. of Electrical and Electronics Engineering\\University of Cape Town
+\end{center}
+
+
+\vskip 10mm
+\begin{center}
+Submitted to the Department of Electrical Engineering at the University of Cape Town in partial
+fulfilment of the academic requirements for a Bachelor of Science degree in Electrical and Computer Engineering
+
+\end{center}
+
+
+\vskip 5mm
+\begin{center}{\bf \today}
+\end{center}
+
+% Empty Page
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\onehalfspacing
+\nohyphens{}
+\thispagestyle{empty}
+\vskip 40mm
+
+% Frontmatter
+\input{frontmatter/Declaration}
+\newpage
+\pagenumbering{roman}
+\input{frontmatter/Acknowledgements}
+\newpage
+\input{frontmatter/Abstract}
+\newpage
+
+\tableofcontents
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+% possible glossary
+
+% Page formatting, to place section titles as headers of odd pages and Chapter titles as headers of even pages.
+\newpage
+\fancyhead[RE,LO]{}
+\fancyhead[LE]{\leftmark}
+\fancyhead[RO]{\rightmark}
+\pagestyle{fancy}
+
+\pagenumbering{arabic}
+
+% Body
+\include{body/Introduction}
+\include{body/Literature}
+\include{body/Methodology}
+\include{body/Results}
+\include{body/Discussion}
+\include{body/Conclusions}
+\include{body/Recommendations}
+% \include{References}
+\bibliography{references}
+\appendix
+\include{body/appendixa}
+\include{body/appendixb}
+
+\end{document}
