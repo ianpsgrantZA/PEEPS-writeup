@@ -14,7 +14,8 @@
 \usepackage{hyperref}
 
 % Additional Packages
-
+\usepackage{enumitem}
+\usepackage{float}
 \bibliographystyle{preamble/IEEEtran/bibtex/IEEEtran}
 
 % Include page formatting here. 
@@ -23,3 +24,27 @@
 \renewcommand{\headrulewidth}{0pt}
 \rhead[]{\thesection}
 \lhead[\thechapter]{}
+
+% Custom Lists
+\setlist{itemsep=1pt, topsep=1pt}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{\textendash}
+\renewcommand{\labelitemiv}{$\sqbullet$}
+
+\newlist{RM}{enumerate}{5}
+\setlist[RM,1]{label=RM-\arabic*:, ref=RM-\arabic*}
+\setlist[RM,2]{label=RM-\arabic{RMi}.\arabic*:, ref=RM-\arabic{RMi}.\arabic*}
+
+
+\newlist{SA}{enumerate}{5}
+\setlist[SA,1]{label=SA-\arabic*:, ref=SA-\arabic*}
+\setlist[SA,2]{label=SA-\arabic{SAi}.\arabic*:, ref=SA-\arabic{SAi}.\arabic*}
+
+\newlist{SB}{enumerate}{5}
+\setlist[SB,1]{label=SB-\arabic*:, ref=SB-\arabic*}
+\setlist[SB,2]{label=SB-\arabic{SBi}.\arabic*:, ref=SB-\arabic{SBi}.\arabic*}
+
+\newlist{SC}{enumerate}{5}
+\setlist[SC,1]{label=SC-\arabic*:, ref=SC-\arabic*}
+\setlist[SC,2]{label=SC-\arabic{SCi}.\arabic*:, ref=SC-\arabic{SCi}.\arabic*}
+
