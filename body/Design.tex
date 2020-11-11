@@ -44,7 +44,7 @@ Proposals:
 
 \begin{enumerate}
     \item \textbf{Python:} It is assumed amongst software engineers that for any project, there is usually a python library or framework that could help you accomplish it. Web development, in this case, is no exception. With the introduction of the Django web framework, Python has made itself a strong alternative to the more established PHP. The sheer versatility of this programming language means that when using Django, you have access to far more functionality than just web development. Additionally, Python has a simple, but elegant syntax that can be easily understood by newer developers. 
-    \item \textbf{PHP:} PHP is a language used strictly for web development. Its popularity in the web application space means that it's the language of choice for large web-based companies like Facebook, Wikipedia and Tumblr \cite{ThePHPGroup}. Its 'C'-style syntax means that it is easy to pick up for developers new to the language, and its persistence since its inception means that there are plenty of resources available to you as you develop your application. While Python is more popular than PHP for general use applications, PHP is still far more popular when it comes to web applications \cite{ThePHPGroup}. The choice between them may come down to whether you plan to make use of Python's large number of applications or stick to purely web development.
+    \item \textbf{PHP:} PHP is a language used strictly for web development. Its popularity in the web application space means that it's the language of choice for large web-based companies like Facebook, Wikipedia and Tumblr \cite{ThePHPGroup}. Its `C'-style syntax means that it is easy to pick up for developers new to the language, and its persistence since its inception means that there are plenty of resources available to you as you develop your application. While Python is more popular than PHP for general use applications, PHP is still far more popular when it comes to web applications \cite{ThePHPGroup}. The choice between them may come down to whether you plan to make use of Python's large number of applications or stick to purely web development.
 \end{enumerate}
 
 \subsection{Final Design Decision}
@@ -65,7 +65,7 @@ With these design decisions justified, it is now possible to explain in depth th
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.7\textwidth]{figures/SystemHighLevel.png}
+\includegraphics[width=0.8\textwidth]{figures/SystemHighLevel.png}
 \caption{High level overview of the main application systems and their components.}
 \label{fig:system_high_level}
 \end{figure}
@@ -74,7 +74,7 @@ The design of the PEEPS framework is split into two independent systems: the sma
 
 \subsection{Inter-System Interaction Summary}
 \label{sec:Inter-System Interaction Summary}
-Since the server system acts as the 'hub' for all the stored user and locational data, it will only interact with the mobile application when information is requested by the application. This will happen when two conditions are met: either the application wants to retrieve or store user login data, or the application wants to retrieve or store geographical data. When this is not happening, the server will remain dormant, while still being accessible by backend managers who wish to interact manually with the data. Likewise, the smartphone application can still run without a connection to the server, although its functionality will be severely reduced. 
+Since the server system acts as the `hub' for all the stored user and locational data, it will only interact with the mobile application when information is requested by the application. This will happen when two conditions are met: either the application wants to retrieve or store user login data, or the application wants to retrieve or store geographical data. When this is not happening, the server will remain dormant, while still being accessible by backend managers who wish to interact manually with the data. Likewise, the smartphone application can still run without a connection to the server, although its functionality will be severely reduced. 
 
 \subsection{Data Anonymity}
 Because of the sensitive nature of population tracking and the possibility of abuse, all data displayed to the user by the PEEPS system is predicted from past data and is completely anonymous. Should live population data be displayed, malicious users could abuse the system to perform illegal acts such as theft. Therefore, the PEEPS system uses anonymous prediction mechanisms to provide useful insight into probable location-populations without compromising individuals' or businesses' privacy and safety. 
@@ -87,7 +87,7 @@ The Peeps smartphone application can be split into three main subsystems: The lo
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/ClassDiagram.png}
+    \includegraphics[width=0.8\textwidth]{figures/ClassDiagram.png}
     \caption{Java class hierarchy for the PEEPS App.}
     \label{fig:class_diagram}
 \end{figure}
@@ -234,7 +234,7 @@ The purpose of this view is to allow the user to save locations of interest so t
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.25\textwidth]{figures/LocationFragmentDesign.PNG}
+    \includegraphics[width=0.268\textwidth]{figures/LocationFragmentDesign.PNG}
     \caption{Location Fragment displaying a user's saved locations with their population status.}
     \label{fig:location_fragment_design}
 \end{figure}
@@ -243,7 +243,7 @@ Figure \ref{fig:location_fragment_design} is what the app will display once the 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.25\textwidth]{figures/EnterLocation.PNG}
+    \includegraphics[width=0.268\textwidth]{figures/EnterLocation.PNG}
     \caption{Add-Location View with `prefer coordinates' selected.}
     \label{fig:enter_location}
 \end{figure}
@@ -252,7 +252,7 @@ The user can use this view to enter both a location's name and coordinates, and 
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.25\textwidth]{figures/BusinessExtended.PNG}
+    \includegraphics[width=0.268\textwidth]{figures/BusinessExtended.PNG}
     \caption{Location Fragment with a location selected.}
     \label{fig:business_extended}
 \end{figure}
@@ -267,7 +267,7 @@ This view is designed as a method of testing the PEEPS framework's ability to pe
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.25\textwidth]{figures/MapmodeDesign.png}
+    \includegraphics[width=0.268\textwidth]{figures/MapmodeDesign.png}
     \caption{Mapmode Fragment's view displaying four pre-selected locations.}
     \label{fig:mapmode_design}
 \end{figure}
@@ -284,7 +284,7 @@ The two subsystems that the server utilises are the web interface and database s
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/ServerSubsystemInteraction.png}
+    \includegraphics[width=0.85\textwidth]{figures/ServerSubsystemInteraction.png}
     \caption{Server subsystem's interactions with the database and app.}
     \label{fig:server_subsystem_interaction}
 \end{figure}
@@ -330,13 +330,17 @@ Most of the complexity of the web interface is present in the population retriev
 \begin{lstlisting}[caption={\detokenize{get_pop_data.php's population-data extraction algorythm. }},label={lst:php_login},language=php]
 //connect to DB
 $db_con = pg_connect("host=localhost port=5432 dbname=PEEPS user=postgres password=admin");
+
 //assume success until failure
 $response["success"] = 1;
 $response["message"] = "Data received.";
 
-//get data from database
-for ($i=8; $i < 23; $i++) { //for each hour bracket from 8:00 to 23:00:
-    $i2=$i+1; //set end time to be one hour after first
+for ($i=8; $i < 23; $i++) { //for each hour bracket from 8:00 to 23:00
+$i2=$i+1; //set end time to be one hour after first
+$count = 0;
+
+foreach ($locations as $loc) {
+
     //format query
     $add_query = "SELECT COUNT(DISTINCT user_id) FROM public.location_data" .
         " WHERE timestamp::date BETWEEN '$previous_date' AND '$current_date'" . 
@@ -345,24 +349,33 @@ for ($i=8; $i < 23; $i++) { //for each hour bracket from 8:00 to 23:00:
         //between hour and hour+1
         " AND EXTRACT(DOW FROM timestamp) = " . $dow . 
         // on day of week of current date
-        " AND ST_Distance(ST_Transform('SRID=4326;POINT($lon $lat)'::geometry, 3857), ST_Transform(ST_SetSRID(coordinates,4326),3857))  <= 20"; 
-        //within 20 meters of input coordinates
+        " AND ST_Distance(ST_Transform('SRID=4326;POINT($loc[0] $loc[1])' ::geometry, 3857), ST_Transform(ST_SetSRID(coordinates,4326),3857))  <= 20"; 
+        //within 20 meters of location coordinates
 
-    //query result
     $result = pg_query($db_con, $add_query);
 
     //check for errors
     if ($result) {
         //SUCCESS
         $row = pg_fetch_assoc($result);
-        $response["n".strval($i)."_".strval($i2)] = $row["count"]+0; //ie: n8_9
+        // $value = ($row["count"]+0)/$week_scope;
+        $response["n".strval($i)."_".strval($i2)."_loc".$count] = $row["count"]+0;
 
     } else {
         // FAILURE
         $response["success"] = 0;
         $response["message"] = "Data not avaliable.";
+
+        $error = true;
         break;
     }
+    $count++;
+}
+}
+
+//echo response
+pg_close();
+echo json_encode($response);
 }
 
 //echo response
