@@ -1,3 +1,26 @@
-\chapter{Recommendations}
+\chapter{Recommendations and Future Development}
 
-Make sensible recommendations for further work.
+\section{Recommendations}
+
+\subsection{Flutter as a Substitute for Java}
+While this project used Android as its method of implementing the app, it is not recommended for developers who wish to develop for both Android and iOS. With Flutter's surge in popularity, it is now the current best solution to multi-OS development. Because some background processes, when developing using Flutter, still need dedicated Java code, developers  will be able to make use of the PEEPS app's background processing codebase as a template.
+
+\subsection{Fullscreen Dialog-Fragment}
+Since Fullscreen Dialog-Fragments are Google's recommended method of large data input from an overlay, it was chosen as the method for inputting the user's saved location details\footnote{As displayed in Figure \ref{fig:enter_location}.}. However, the shortcomings of this input method become apparent as soon as it was implemented. Not only does it negatively affect performance while using the app, but Google's own documentation of this type of input is sparce. Thus, it is recommended that developers use dedicated views instead of dialog fragments when possible for complex inputs containing many values or custom input mechanisms. 
+
+
+
+
+\subsection{Data Processing}
+In the current version of PEEPS, most of the data processing is handled by the server in the form of SQL formatting and execution. While the performance testing showed that the app was not resource intensive while still doing a large amount of raw data processing, this may not be the case for older generation devices. Limiting the amount of data sent to the device also prevents hackers from gaining access to sensitive information. Hence, it is recommended to perform further data analysis on the server and relay only the information which the app needs to display.
+
+\section{Future Development}
+
+\subsection{Extensive Network Testing}
+Network diagnosis was not heavily focussed on in the investigative testing section of this report. This is largely due to Android's lack of diagnostic tools able to measure this value. While the Android Studio Profiler shows the usage over time, it does not report values like total network usage over time. In conducting further testing, one could create a Java class that measures the network usage that can determine whether the program is lightweight enough for users to want to use it. This is important for the South African use-case, as data is far less affordable than in other countries. Such a class could additionally be used to gather more accurate diagnostic information about the app's operation.
+
+\subsection{Population-Scale Testing}
+Due to the novel coronavirus epidemic, large scale population testing was not in the scope of this project. Such a test would involve a large number of individuals downloading the app on their phones so that the database would have enough data to simulate a commercial use-case. The results of this test would provide detailed information about the real-world applications of the PEEPS software, such the app's usability, effectiveness, and applicability to users.
+
+\subsection{iOS Comparison Testing}
+While Android is more popular worldwide, the US market is dominated by Apples smartphones. This means that if one wants to enter their large Appstore marketplace, developing for iOS devices becomes essential. Therefore, future development could replicate the PEEPS app using Swift or Flutter so that multi-OS testing can be conducted, and differences in these operating systems can be investigated.

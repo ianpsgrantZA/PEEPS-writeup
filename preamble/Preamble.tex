@@ -14,9 +14,18 @@
 \usepackage{hyperref}
 
 % Additional Packages
+% \usepackage{titletoc}
+% \usepackage{tocloft}
+
 \usepackage{enumitem}
 \usepackage{float}
-\bibliographystyle{preamble/IEEEtran/bibtex/IEEEtran}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages} 
+\bibliographystyle{preamble/IEEEtran/bibtex/IEEEtran} 
+
+% \parskip=0em 
 
 % Include page formatting here. 
 \parskip = 6mm
@@ -31,11 +40,6 @@
 \renewcommand{\labelitemiii}{\textendash}
 \renewcommand{\labelitemiv}{$\sqbullet$}
 
-\newlist{RM}{enumerate}{5}
-\setlist[RM,1]{label=RM-\arabic*:, ref=RM-\arabic*}
-\setlist[RM,2]{label=RM-\arabic{RMi}.\arabic*:, ref=RM-\arabic{RMi}.\arabic*}
-
-
 \newlist{SA}{enumerate}{5}
 \setlist[SA,1]{label=SA-\arabic*:, ref=SA-\arabic*}
 \setlist[SA,2]{label=SA-\arabic{SAi}.\arabic*:, ref=SA-\arabic{SAi}.\arabic*}
@@ -48,3 +52,47 @@
 \setlist[SC,1]{label=SC-\arabic*:, ref=SC-\arabic*}
 \setlist[SC,2]{label=SC-\arabic{SCi}.\arabic*:, ref=SC-\arabic{SCi}.\arabic*}
 
+%code formatting
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{javastyle}{frame=tb,
+  language=Java,
+  backgroundcolor=\color{backcolour}, 
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  captionpos=b,
+  frame=none,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\definecolor{dkgreen}{rgb}{0,.6,0}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
+\lstdefinestyle{phpstyle}{
+  language        = php,
+  basicstyle      = \small\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow}
+}
+
+\lstset{style=javastyle}
